@@ -1,6 +1,63 @@
 
 #include "so_long.h"
 
+void ft_is_accessible(int i,int j,char ** mapa)
+{
+		if(mapa[i-1][j] != '1' && mapa[i-1][j] != 'E')
+		{
+			mapa[i-1][j] = 'P';
+			//ft_is_accessible(i-1,j,map);
+		}
+		if(mapa[i+1][j] != '1' && mapa[i+1][j] != 'E')
+		{
+			mapa[i+1][j] = 'P';
+			//ft_is_accessible(i+1,j,map);
+
+		}
+		if(mapa[i][j+1] != '1' && mapa[i][j+1] != 'E')
+		{
+			mapa[i][j+1] = 'P';
+			//	ft_is_accessible(i,j+1,map);
+		}
+		if(mapa[i][j-1] != '1' && mapa[i][j-1] != 'E')
+		{
+			mapa[i][j-1] = 'P';
+			//ft_is_accessible(i,j-1,map);
+		}
+}
+
+void ft_check_path(t_init_map *data)
+{
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+
+		while (data->map[i][j++] != 'P')
+		{
+			if(data->map[i][j]  == '\0')
+			{
+				if(i == data->hight)
+					break;
+				i++;
+				j = 0;
+			}
+		}
+data->cpymap = data->map;
+ft_is_accessible(i,j,data->cpymap);
+
+
+ 	printf("i&j%s", data->cpymap[0]);
+	printf("i&j%s", data->cpymap[1]);
+	printf("i&j%s", data->cpymap[2]);
+	printf("i&j%s", data->cpymap[3]);
+	printf("i&j%s", data->cpymap[4]);
+	printf("i&j%s", data->cpymap[5]);
+
+}
+
+
 void	ft_check_wall(t_init_map *data)
 {
 	int	i;
