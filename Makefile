@@ -26,7 +26,7 @@ SRC_BONUS = gnl/get_next_line.c\
 
 HDRS = mandatory/so_long.h
 
-PRINTF_PATH		=	./ft_printf
+PRINTF_PATH		=	./printf
 PRINTF			=	$(PRINTF_PATH)/libftprintf.a
 
 HDRS_BONUS = bonus/so_long_bonus.h
