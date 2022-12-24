@@ -21,8 +21,8 @@
 
 char	*get_next_line(int fd);
 size_t	ft_strlen(const char *str);
-char	*ft_strjoin(char *memory, char *tmp);
-char	*ft_strchr(char *s, int c);
+char	*ft_strjoin(char *memory, char const *tmp);
+char	*ft_strchr( const char *s, int c);
 char	*ft_new_string(char *memory);
 char	*ft_put_line(char *memory);
 char	*ft_read_string(int fd, char *memory);

@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: csiqueir <csiqueir@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/24 16:22:41 by csiqueir          #+#    #+#             */
+/*   Updated: 2022/12/24 16:22:50 by csiqueir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
@@ -16,10 +27,9 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <stdlib.h>
-# include <stdio.h>
-# include <string.h>
 # include "mlx/mlx.h"
 # include "../gnl/get_next_line.h"
+# include "../ft_printf/ft_printf.h"
 
 typedef struct s_graph
 {
@@ -42,6 +52,7 @@ typedef struct s_init_map
 	int		count;
 	int		step;
 	char	**map;
+	char	**cpymap;
 	void	*wall;
 	void	*mlx;
 	void	*win;

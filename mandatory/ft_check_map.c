@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_check_map.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: csiqueir <csiqueir@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/24 16:20:48 by csiqueir          #+#    #+#             */
+/*   Updated: 2022/12/24 16:20:58 by csiqueir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "so_long.h"
 
@@ -44,17 +55,14 @@ void ft_check_path(t_init_map *data)
 				j = 0;
 			}
 		}
-data->cpymap = data->map;
-ft_is_accessible(i,j,data->cpymap);
-
-
- 	printf("i&j%s", data->cpymap[0]);
-	printf("i&j%s", data->cpymap[1]);
-	printf("i&j%s", data->cpymap[2]);
-	printf("i&j%s", data->cpymap[3]);
-	printf("i&j%s", data->cpymap[4]);
-	printf("i&j%s", data->cpymap[5]);
-
+	data->cpymap = data->map;
+	ft_is_accessible(i,j,data->cpymap);
+ 	ft_printf("i&j%s", data->cpymap[0]);
+	ft_printf("i&j%s", data->cpymap[1]);
+	ft_printf("i&j%s", data->cpymap[2]);
+	ft_printf("i&j%s", data->cpymap[3]);
+	ft_printf("i&j%s", data->cpymap[4]);
+	ft_printf("i&j%s", data->cpymap[5]);
 }
 
 
@@ -80,7 +88,7 @@ void	ft_check_wall(t_init_map *data)
 	}
 	if (err > 0)
 	{
-		printf("Error.\nCheck walls");
+		ft_printf("Error.\nCheck walls");
 		exit(EXIT_FAILURE);
 	}
 }
@@ -98,7 +106,7 @@ void	ft_check_format(t_init_map *data)
 	len = ft_strlen(data->fn);
 	if (len < 3)
 	{
-		printf("Error.\nCheck file extansion");
+		ft_printf("Error.\nCheck file extansion");
 		exit(EXIT_FAILURE);
 	}
 	i = len - 3;
@@ -106,7 +114,7 @@ void	ft_check_format(t_init_map *data)
 	{
 		if (data->fn[i] != ber[j])
 		{
-			printf("Error.\nCheck file extansion");
+			ft_printf("Error.\nCheck file extansion");
 			exit(EXIT_FAILURE);
 		}
 		i++;
@@ -131,7 +139,7 @@ void	ft_check_char(t_init_map *data)
 				i++;
 			else
 			{
-				printf("Error.\nInvalid char at map");
+				ft_printf("Error.\nInvalid char at map");
 				exit(EXIT_FAILURE);
 			}
 		}
@@ -166,7 +174,7 @@ void	ft_char_set(t_init_map *data)
 	}
 	if (data->count == 0 || data->player == 0
 		|| ex == 0 || data->player > 1)
-		printf("Error.\n Map invalid"), exit(EXIT_FAILURE);
+		ft_printf("Error.\n Map invalid"), exit(EXIT_FAILURE);
 }
 
 void	ft_game_result(t_init_map *data)

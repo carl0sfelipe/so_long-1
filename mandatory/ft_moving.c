@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_moving.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: csiqueir <csiqueir@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/24 16:22:13 by csiqueir          #+#    #+#             */
+/*   Updated: 2022/12/24 16:22:18 by csiqueir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "so_long.h"
 
@@ -21,7 +32,7 @@ void	move_w(t_init_map *data)
 			data->escape = 1;
 		data->y--;
 		data->step++;
-		printf("Steps: %d\n", data->step);
+		ft_printf("Steps: %d\n", data->step);
 	}
 }
 
@@ -45,7 +56,7 @@ void	move_s(t_init_map *data)
 			data->escape = 1;
 		data->y++;
 		data->step++;
-		printf("Steps: %d\n", data->step);
+		ft_printf("Steps: %d\n", data->step);
 	}
 }
 
@@ -69,7 +80,7 @@ void	move_a(t_init_map *data)
 			data->escape = 1;
 		data->x--;
 		data->step++;
-		printf("Steps: %d\n", data->step);
+		ft_printf("Steps: %d\n", data->step);
 	}
 }
 
@@ -93,7 +104,7 @@ void	move_d(t_init_map *data)
 			data->escape = 1;
 		data->x++;
 		data->step++;
-		printf("Steps: %d\n", data->step);
+		ft_printf("Steps: %d\n", data->step);
 	}
 }
 

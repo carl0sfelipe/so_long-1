@@ -26,6 +26,9 @@ SRC_BONUS = gnl/get_next_line.c\
 
 HDRS = mandatory/so_long.h
 
+PRINTF_PATH		=	./ft_printf
+PRINTF			=	$(PRINTF_PATH)/libftprintf.a
+
 HDRS_BONUS = bonus/so_long_bonus.h
 
 OBJ_BONUS = $(SRC_BONUS:.c=.o)
@@ -40,9 +43,12 @@ MLX_FLAGS = -L./mandatory/mlx -lmlx -framework OpenGL -framework Appkit
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(HDRS)
-		$(CC) $(SRC) $(FLAGS) $(MLX_FLAGS) -o $(NAME)
+$(NAME): $(PRINTF) $(OBJ) $(HDRS)
+		$(CC) $(SRC) $(PRINTF) $(FLAGS) $(MLX_FLAGS) -o $(NAME)
 
+$(PRINTF):
+		make -C $(PRINTF_PATH) all
+		
 bonus: $(OBJ_BONUS) $(HDRS_BONUS)
 		$(CC) $(FLAGS) $(MLX_FLAGS) $(OBJ_BONUS) -o $(NAME_BONUS)
 

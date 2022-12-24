@@ -13,7 +13,7 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-char	*ft_strjoin(char *memory, char *tmp)
+char	*ft_strjoin(char *memory, char const *tmp)
 {
 	size_t	i;
 	size_t	j;
@@ -41,7 +41,7 @@ char	*ft_strjoin(char *memory, char *tmp)
 	return (str);
 }
 
-char	*ft_strchr(char *str, int c)
+char	*ft_strchr(const char *str, int c)
 {
 	int	i;
 

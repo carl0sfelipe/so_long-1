@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_read_map.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: csiqueir <csiqueir@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/24 16:23:05 by csiqueir          #+#    #+#             */
+/*   Updated: 2022/12/24 16:23:09 by csiqueir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "so_long.h"
 
@@ -10,7 +21,7 @@ void	ft_map_hight(t_init_map *data)
 	line = get_next_line(fd);
 	if (!line)
 	{
-		printf("File not read\n");
+		ft_printf("File not read\n");
 		exit (EXIT_FAILURE);
 	}
 	while (line[data->lenght] != '\0')
@@ -19,7 +30,7 @@ void	ft_map_hight(t_init_map *data)
 	{
 		if ((int)ft_strlen(line) != data->lenght)
 		{
-			printf("Error.Map not valide");
+			ft_printf("Error.Map not valide");
 			exit(EXIT_FAILURE);
 		}
 		data->hight++;
@@ -39,6 +50,7 @@ void	ft_read_map(t_init_map *data)
 	fd = open(data->fn, O_RDONLY);
 	line = get_next_line(fd);
 	data->map = (char **)malloc(sizeof(char *) * (data->hight + 1));
+	data->cpymap = (char **)malloc(sizeof(char *) * (data->hight + 1));
 	i = 0;
 	while (line)
 	{
