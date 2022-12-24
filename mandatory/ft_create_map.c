@@ -6,7 +6,7 @@
 /*   By: csiqueir <csiqueir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 16:21:19 by csiqueir          #+#    #+#             */
-/*   Updated: 2022/12/24 16:21:26 by csiqueir         ###   ########.fr       */
+/*   Updated: 2022/12/24 18:00:43 by csiqueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void	ft_create_map(t_init_map *data)
 					data->graph->collect, j * 40, i * 40);
 			j++;
 		}
-		j = 0, i++;
+		j = 0;
+		i++;
 	}
 }

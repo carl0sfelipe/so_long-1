@@ -6,7 +6,7 @@
 /*   By: csiqueir <csiqueir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 16:22:41 by csiqueir          #+#    #+#             */
-/*   Updated: 2022/12/24 16:22:50 by csiqueir         ###   ########.fr       */
+/*   Updated: 2022/12/24 18:00:00 by csiqueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@
 # include <stdlib.h>
 # include "mlx/mlx.h"
 # include "../gnl/get_next_line.h"
-# include "../ft_printf/ft_printf.h"
+# include "../printf/ft_printf.h"
 
 typedef struct s_graph
 {

@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_check_map_bonus.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: csiqueir <csiqueir@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/24 18:09:33 by csiqueir          #+#    #+#             */
+/*   Updated: 2022/12/24 18:13:39 by csiqueir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "so_long_bonus.h"
 
@@ -109,7 +120,8 @@ void	ft_char_set(t_init_map *data)
 	}
 	if (data->count == 0 || data->player == 0
 		|| ex == 0 || data->player > 1)
-		printf("error\n"), exit(EXIT_FAILURE);
+		printf("error\n");
+	exit(EXIT_FAILURE);
 }
 
 void	ft_next_lvl(t_init_map *data)

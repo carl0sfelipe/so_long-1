@@ -6,7 +6,7 @@
 /*   By: csiqueir <csiqueir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 17:07:46 by csiqueir          #+#    #+#             */
-/*   Updated: 2022/12/24 17:07:59 by csiqueir         ###   ########.fr       */
+/*   Updated: 2022/12/24 18:06:11 by csiqueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,5 @@ void	*ft_calloc(size_t count, size_t size)
 	if (!r)
 		return (NULL);
 	ft_bzero(r, size * count);
-
-	
 	return (r);
 }
