@@ -55,10 +55,12 @@ bonus: $(OBJ_BONUS) $(HDRS_BONUS)
 clean:
 		rm -f $(OBJ_BONUS)
 		rm -f $(OBJ)
+		rm -rf printf/obj
 
 fclean: clean
 		rm -f $(NAME_BONUS)
 		rm -f $(NAME)
+		rm -f $(PRINTF)
 
 re:		fclean all
 

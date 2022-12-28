@@ -6,7 +6,7 @@
 /*   By: csiqueir <csiqueir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 16:23:05 by csiqueir          #+#    #+#             */
-/*   Updated: 2022/12/24 16:23:09 by csiqueir         ###   ########.fr       */
+/*   Updated: 2022/12/26 23:22:19 by csiqueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,11 @@ void	ft_read_map(t_init_map *data)
 	while (line)
 	{
 		data->map[i] = line;
+		data->cpymap[i] = ft_strdup(data->map[i]);
 		line = get_next_line(fd);
 		i++;
 	}
+	data->cpymap[i] = NULL;
 	data->map[i] = NULL;
 	free(line);
 	line = NULL;

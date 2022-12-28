@@ -6,7 +6,7 @@
 /*   By: csiqueir <csiqueir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 16:22:41 by csiqueir          #+#    #+#             */
-/*   Updated: 2022/12/24 18:00:00 by csiqueir         ###   ########.fr       */
+/*   Updated: 2022/12/27 01:07:13 by csiqueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,6 @@ void	ft_check_char(t_init_map *data);
 void	ft_check_format(t_init_map *data);
 void	ft_check_wall(t_init_map *data);
 void	ft_game_result(t_init_map *data);
+void ft_check_path(char **map, int hight, int lenght);
 
 #endif
