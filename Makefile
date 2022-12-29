@@ -2,7 +2,11 @@ NAME = so_long
 
 NAME_BONUS = so_long_bonus
 
-MLX	= mandatory/mlx/libmlx.a
+MLX	= mlx/libmlx.a
+
+MLX_LINUX = minilibx-linux/libmlx.a
+
+
 
 SRC = mandatory/ft_check_map.c\
 	mandatory/ft_create_map.c\
@@ -39,12 +43,26 @@ CC = gcc
 
 FLAGS = -Wall -Wextra -Werror
 
-MLX_FLAGS = -L./mandatory/mlx -lmlx -framework OpenGL -framework Appkit
+MLX_FLAGS = -L./mlx -lmlx -framework OpenGL -framework Appkit
+
+DETECTED_OS	= $(shell uname)
+
+ifeq ($(DETECTED_OS), Linux)
+$(NAME): $(OBJS) $(MLX_LINUX) $(LIBFT)
+	make -C mlx-linux
+	$(CC) $(OBJS) -Llibft -lft -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -I/usr/include -Imlx_linux -03 -c $< -o $@
+else
+
+$(NAME): $(PRINTF) $(OBJ) $(HDRS)
+		make -C mlx
+		$(CC) $(SRC) $(PRINTF) $(FLAGS) $(MLX_FLAGS) -o $(NAME)
+endif
 
 all: $(NAME)
 
-$(NAME): $(PRINTF) $(OBJ) $(HDRS)
-		$(CC) $(SRC) $(PRINTF) $(FLAGS) $(MLX_FLAGS) -o $(NAME)
 
 $(PRINTF):
 		make -C $(PRINTF_PATH) all

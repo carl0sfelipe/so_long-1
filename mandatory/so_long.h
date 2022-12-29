@@ -6,7 +6,7 @@
 /*   By: csiqueir <csiqueir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 16:22:41 by csiqueir          #+#    #+#             */
-/*   Updated: 2022/12/27 01:07:13 by csiqueir         ###   ########.fr       */
+/*   Updated: 2022/12/28 21:40:48 by csiqueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,27 @@
 # define EXIT "./pictures/exit.xpm"
 # define COLLECT "./pictures/collect.xpm"
 # define WIN "./pictures/winner.xpm"
+
+#if defined(__linux__)
+# define ESC 27
+# define W 119
+# define A 97
+# define S 115
+# define D 100
+#elif defined(__APPLE__) && defined(__MACH__)
 # define ESC 53
 # define W 13
 # define A 0
 # define S 1
 # define D 2
+#endif
+
 
 # include <unistd.h>
 # include <fcntl.h>
 # include <stdlib.h>
-# include "mlx/mlx.h"
+# include "../mlx/mlx.h"
+# include "../mlx-linux/mlx.h"
 # include "../gnl/get_next_line.h"
 # include "../printf/ft_printf.h"
 
