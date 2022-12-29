@@ -6,7 +6,7 @@
 /*   By: csiqueir <csiqueir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 16:20:48 by csiqueir          #+#    #+#             */
-/*   Updated: 2022/12/27 21:50:38 by csiqueir         ###   ########.fr       */
+/*   Updated: 2022/12/29 01:31:59 by csiqueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -304,11 +304,4 @@ void	ft_char_set(t_init_map *data)
 	if (data->count == 0 || data->player == 0
 		|| ex == 0 || data->player > 1)
 		ft_printf("Error.\n Map invalid"), exit(EXIT_FAILURE);
-}
-
-void	ft_game_result(t_init_map *data)
-{
-	mlx_clear_window(data->mlx, data->win);
-	mlx_put_image_to_window(data->mlx, data->win, data->graph->winner,
-		data->lenght * 40 / 2.4, data->hight * 40 / 4);
 }
