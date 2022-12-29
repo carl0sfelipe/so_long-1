@@ -6,7 +6,7 @@
 /*   By: csiqueir <csiqueir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 16:22:41 by csiqueir          #+#    #+#             */
-/*   Updated: 2022/12/28 21:40:48 by csiqueir         ###   ########.fr       */
+/*   Updated: 2022/12/29 00:51:25 by csiqueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,19 @@
 # define COLLECT "./pictures/collect.xpm"
 # define WIN "./pictures/winner.xpm"
 
-#if defined(__linux__)
-# define ESC 27
-# define W 119
-# define A 97
-# define S 115
-# define D 100
-#elif defined(__APPLE__) && defined(__MACH__)
-# define ESC 53
-# define W 13
-# define A 0
-# define S 1
-# define D 2
-#endif
-
+# if defined(__linux__)
+#  define ESC 27
+#  define W 119
+#  define A 97
+#  define S 115
+#  define D 100
+# elif defined(__APPLE__) && defined(__MACH__)
+#  define ESC 53
+#  define W 13
+#  define A 0
+#  define S 1
+#  define D 2
+# endif
 
 # include <unistd.h>
 # include <fcntl.h>
@@ -86,6 +85,16 @@ void	ft_check_char(t_init_map *data);
 void	ft_check_format(t_init_map *data);
 void	ft_check_wall(t_init_map *data);
 void	ft_game_result(t_init_map *data);
-void ft_check_path(char **map, int hight, int lenght);
+void	ft_check_path(char **map, int hight, int lenght);
+void	put_exit_img(t_init_map *data, int *j, int *i);
+void	put_collect_img(t_init_map *data, int *j, int *i);
+void	ft_check_map_validity(t_init_map *data, int ex);
+void	ft_process_char(t_init_map *data, char c, int *ex);
+void	ft_game_result(t_init_map *data);
+
+
+
+
+
 
 #endif

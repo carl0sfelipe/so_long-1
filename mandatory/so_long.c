@@ -6,7 +6,7 @@
 /*   By: csiqueir <csiqueir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 16:22:25 by csiqueir          #+#    #+#             */
-/*   Updated: 2022/12/26 23:47:15 by csiqueir         ###   ########.fr       */
+/*   Updated: 2022/12/28 22:50:30 by csiqueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	ft_check(t_init_map *data)
 	ft_check_format(data);
 	ft_check_char(data);
 	ft_char_set(data);
-	ft_check_path(data->cpymap,data->hight,data->lenght);
+	ft_check_path(data->cpymap, data->hight, data->lenght);
 }
 
 int	ft_frame(t_init_map *data)

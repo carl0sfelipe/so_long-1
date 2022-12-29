@@ -13,6 +13,7 @@ SRC = mandatory/ft_check_map.c\
 	mandatory/ft_moving.c\
 	mandatory/ft_read_map.c\
 	mandatory/so_long.c\
+	mandatory/so_long_utils.c\
 	gnl/get_next_line_utils.c\
 	gnl/get_next_line.c\
 
@@ -50,19 +51,25 @@ DETECTED_OS	= $(shell uname)
 ifeq ($(DETECTED_OS), Linux)
 $(NAME): $(OBJS) $(MLX_LINUX) $(LIBFT)
 	make -C mlx-linux
-	$(CC) $(OBJS) -Llibft -lft -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
+	$(CC) $(OBJS) -Llibft -lft -L./mlx-linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -I/usr/include -Imlx_linux -03 -c $< -o $@
-else
+elsepy
 
 $(NAME): $(PRINTF) $(OBJ) $(HDRS)
 		make -C mlx
 		$(CC) $(SRC) $(PRINTF) $(FLAGS) $(MLX_FLAGS) -o $(NAME)
 endif
 
+$(NAME): $(PRINTF) $(OBJ) $(HDRS)
+		make -C mlx
+		$(CC) $(SRC) $(PRINTF) $(FLAGS) $(MLX_FLAGS) -o $(NAME)
+
 all: $(NAME)
 
+$(MLX_LINUX):
+		make -C mlx-linux
 
 $(PRINTF):
 		make -C $(PRINTF_PATH) all
