@@ -14,6 +14,8 @@ SRC = mandatory/ft_check_map.c\
 	mandatory/ft_read_map.c\
 	mandatory/so_long.c\
 	mandatory/so_long_utils.c\
+	mandatory/so_long_utils2.c\
+	mandatory/so_long_utils3.c\
 	gnl/get_next_line_utils.c\
 	gnl/get_next_line.c\
 
