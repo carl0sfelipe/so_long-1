@@ -6,7 +6,7 @@
 /*   By: csiqueir <csiqueir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 16:22:41 by csiqueir          #+#    #+#             */
-/*   Updated: 2022/12/29 21:53:58 by csiqueir         ###   ########.fr       */
+/*   Updated: 2023/01/02 21:51:56 by csiqueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ void find_player_position(char **map, int hight, int lenght, struct position *pl
 void mark_visited(char **map, int i, int j);
 void initialize_directions(int **dx, int **dy);
 void initialize_position_queue(struct position_queue *pq, int hight, int lenght);
-void check_adjacent_positions(char **map, int hight, int lenght, int i, int j, int *dx, int *dy);
+void check_adjacent_positions(char **map, int integers[], int *dx, int *dy);
 void ft_check_path(char **map, int hight, int lenght);
 void free_position_queue(struct position_queue *pq);
 void free_directions(int *dx, int *dy);
