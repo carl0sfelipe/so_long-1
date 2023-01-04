@@ -70,31 +70,11 @@ typedef struct s_init_map
 	t_graph	*graph;
 
 }	t_init_map;
-
-struct position
+struct s_position
 {
-    int x;
-    int y;
+	int		x;
+	int		y;
 };
-
-struct position_queue
-{
-    int head;
-    int tail;
-    struct position *queue;
-};
-
-struct position_queue pq;
-
-struct variables {
-	struct position p;
-	int k;	
-	int x;
-	int y;
-};
-
-struct variables v;
-
 void	ft_read_map(t_init_map *data);
 void	ft_map_hight(t_init_map *data);
 void	ft_map_data(t_init_map *data, char *name);
@@ -103,7 +83,6 @@ int		ft_frame(t_init_map *data);
 void	ft_create_map(t_init_map *data);
 int		ft_exit(t_init_map *data);
 int		press_key(int keycode, t_init_map *data);
-
 void	ft_char_set(t_init_map *data);
 void	ft_check_char(t_init_map *data);
 void	ft_check_format(t_init_map *data);
@@ -113,18 +92,11 @@ void	ft_check_path(char **map, int hight, int lenght);
 void	put_exit_img(t_init_map *data, int *j, int *i);
 void	put_collect_img(t_init_map *data, int *j, int *i);
 void	check_for_errors(char **map, int hight, int lenght);
-void ft_process_char(t_init_map *data, int *ex, char c);
+void	ft_process_char(t_init_map *data, int *ex, char c);
 void	ft_game_result(t_init_map *data);
-void find_player_position(char **map, int hight, int lenght, struct position *player_pos);
-void mark_visited(char **map, int i, int j);
-void initialize_directions(int **dx, int **dy);
-void initialize_position_queue(struct position_queue *pq, int hight, int lenght);
-void check_adjacent_positions(char **map, int integers[], int *dx, int *dy);
-void ft_check_path(char **map, int hight, int lenght);
-void free_position_queue(struct position_queue *pq);
-void free_directions(int *dx, int *dy);
-
-
-
+void	find_player_position(char **map, int hight,
+			int lenght, struct s_position *player_pos);
+void	mark_accessible(int i, int j, char **map);
+void	ft_check_path(char **map, int hight, int lenght);
 
 #endif

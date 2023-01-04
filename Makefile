@@ -13,7 +13,6 @@ SRC = mandatory/ft_check_map.c\
 	mandatory/so_long.c\
 	mandatory/so_long_utils.c\
 	mandatory/so_long_utils2.c\
-	mandatory/so_long_utils3.c\
 	gnl/get_next_line_utils.c\
 	gnl/get_next_line.c\
 
@@ -66,6 +65,7 @@ fclean: clean
 		rm -f $(NAME)
 		rm -f $(PRINTF)
 		rm -f mlx/libmlx.a
+		make -C mlx clean
 
 re:		fclean all
 

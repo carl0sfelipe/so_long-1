@@ -12,32 +12,14 @@
 
 #include "so_long.h"
 
+void	ft_check_path(char **map, int hight, int lenght)
+{
+	struct s_position	player_pos;
 
-void ft_check_path(char **map, int hight, int lenght)
-{   
-    struct position player_pos;
-    int *dx;
-    int *dy;
-    int integers[4];
-
-    dx = NULL;
-    dy = NULL;    
-	find_player_position(map, integers[0], integers[1], &player_pos);
-    initialize_position_queue(&pq, hight, lenght);
-    initialize_directions(&dx, &dy);
-    integers[0] = hight;
-    integers[1] = lenght;
-    integers[2] = player_pos.x;
-    integers[3] = player_pos.y;
-
-
-    mark_visited(map, integers[2], integers[3]);
-    check_adjacent_positions(map, integers, dx, dy);
-    check_for_errors(map, integers[0], integers[1]);
-    free_position_queue(&pq);
-    free_directions(dx, dy);
+	find_player_position(map, hight, lenght, &player_pos);
+	mark_accessible(player_pos.x, player_pos.y, map);
+	check_for_errors(map, hight, lenght);
 }
-
 
 void	ft_check_wall(t_init_map *data)
 {

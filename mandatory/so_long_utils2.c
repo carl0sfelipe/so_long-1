@@ -12,19 +12,8 @@
 
 #include "so_long.h"
 
-void	free_position_queue(struct position_queue *pq)
-{
-	free(pq->queue);
-}
-
-void	free_directions(int *dx, int *dy)
-{
-	free(dx);
-	free(dy);
-}
-
 void	find_player_position(char **map, int hight, int lenght,
-	struct position *player_pos)
+	struct s_position *player_pos)
 {
 	int	i;
 	int	j;
@@ -52,21 +41,17 @@ void	find_player_position(char **map, int hight, int lenght,
 	player_pos->y = j;
 }
 
-void	mark_visited(char **map, int i, int j)
+void	mark_accessible(int i, int j, char **map)
 {
-	map[i][j] = 'V';
-}
-
-void	initialize_directions(int **dx, int **dy)
-{
-	*dx = malloc(sizeof(int) * 4);
-	(*dx)[0] = -1;
-	(*dx)[1] = 1;
-	(*dx)[2] = 0;
-	(*dx)[3] = 0;
-	*dy = malloc(sizeof(int) * 4);
-	(*dy)[0] = 0;
-	(*dy)[1] = 0;
-	(*dy)[2] = -1;
-	(*dy)[3] = 1;
+	if (map[i][j] && (map[i][j] == '0'
+		|| map[i][j] == 'C' || map[i][j] == 'P' || map[i][j] == 'E'))
+	{
+		map[i][j] = 'A';
+		mark_accessible(i + 1, j, map);
+		mark_accessible(i - 1, j, map);
+		mark_accessible(i, j + 1, map);
+		mark_accessible(i, j - 1, map);
+	}
+	else
+		return ;
 }
