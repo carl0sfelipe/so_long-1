@@ -6,7 +6,7 @@
 /*   By: csiqueir <csiqueir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 16:22:41 by csiqueir          #+#    #+#             */
-/*   Updated: 2023/01/02 21:51:56 by csiqueir         ###   ########.fr       */
+/*   Updated: 2023/01/04 18:37:13 by csiqueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,12 +71,14 @@ typedef struct s_init_map
 
 }	t_init_map;
 
-struct position {
+struct position
+{
     int x;
     int y;
 };
 
-struct position_queue {
+struct position_queue
+{
     int head;
     int tail;
     struct position *queue;
@@ -84,7 +86,14 @@ struct position_queue {
 
 struct position_queue pq;
 
+struct variables {
+	struct position p;
+	int k;	
+	int x;
+	int y;
+};
 
+struct variables v;
 
 void	ft_read_map(t_init_map *data);
 void	ft_map_hight(t_init_map *data);

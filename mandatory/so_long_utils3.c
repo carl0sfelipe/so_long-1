@@ -22,31 +22,26 @@ void	initialize_position_queue(struct position_queue *pq
 
 void	check_adjacent_positions(char **map, int integers[], int *dx, int *dy)
 {
-	struct position	p;
-	int				k;
-	int				x;
-	int				y;
-
 	initialize_position_queue(&pq, integers[0], integers[1]);
 	pq.queue[pq.tail] = (struct position){integers[2], integers[3]};
 	pq.tail++;
 	while (pq.head < pq.tail)
 	{
-		p = pq.queue[pq.head];
+		v.p = pq.queue[pq.head];
 		pq.head++;
-		k = 0;
-		while (k < 4)
+		v.k = 0;
+		while (v.k < 4)
 		{
-			x = p.x + dx[k];
-			y = p.y + dy[k];
-			if (x >= 0 && x < integers[0] && y >= 0 && y < integers[1]
-				&& map[x][y] != '1' && map[x][y] != 'V')
+			v.x = v.p.x + dx[v.k];
+			v.y = v.p.y + dy[v.k];
+			if (v.x >= 0 && v.x < integers[0] && v.y >= 0 && v.y < integers[1]
+				&& map[v.x][v.y] != '1' && map[v.x][v.y] != 'V')
 			{
-				map[x][y] = 'V';
-				pq.queue[pq.tail] = (struct position){x, y};
+				map[v.x][v.y] = 'V';
+				pq.queue[pq.tail] = (struct position){v.x, v.y};
 				pq.tail++;
 			}
-			k++;
+			v.k++;
 		}
 	}
 }
